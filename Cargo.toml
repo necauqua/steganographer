@@ -1,0 +1,19 @@
+[package]
+name = "steganographer"
+version = "0.1.0"
+authors = ["Anton Bulakh <self@necauqua.dev>"]
+license = "MIT"
+description = "Allows you to hide data in image files"
+edition = "2018"
+
+[build-dependencies]
+structopt = "0.3"
+
+[dependencies]
+structopt = "0.3"
+image = { version = "0.23", default-features = false, features = ["png"] }
+byteorder = "1.4"
+
+[profile.release]
+lto = true
+panic = 'abort'
